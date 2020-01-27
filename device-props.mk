@@ -27,7 +27,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.data_con_rprt=1 \
     persist.radio.calls.on.ims=1 \
     persist.dbg.wfc_avail_ovr=1 \
-    persist.vendor.ims.disableUserAgent=0
+    persist.vendor.ims.disableUserAgent=0 \
+    persist.data.netmgrd.qos.enable=true \
+    service.qti.ims.enabled=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
      persist.env.fastdorm.enabled=true

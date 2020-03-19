@@ -35,4 +35,12 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="grus" \
     TARGET_DEVICE="grus"
 
+# Google Services
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+WITH_GAPPS := true
+TARGET_GAPPS_ARCH := arm64
+IS_PHONE := true
+TARGET_INCLUDE_STOCK_ARCORE := true
+
+# DerpFest OFFICIAL
+DERP_BUILDTYPE := Official

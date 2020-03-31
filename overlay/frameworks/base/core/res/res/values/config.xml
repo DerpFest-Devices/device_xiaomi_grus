@@ -22,7 +22,7 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
-    <bool name="config_unplugTurnsOnScreen">false</bool>
+    <bool name="config_unplugTurnsOnScreen">true</bool>
 
     <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
          autodetected from the Configuration. -->
@@ -321,6 +321,11 @@
     <!-- Should the pinner service pin the Home application? -->
     <bool name="config_pinnerHomeApp">true</bool>
 
+    <!-- The list of components which should be automatically disabled for a specific device. -->
+    <string-array name="config_deviceDisabledComponents" translatable="false">
+        <item>com.google.android.gms/com.google.android.gms.nearby.messages.service.NearbyMessagesService</item>
+    </string-array>
+
     <!-- True if the device supports Sustained Performance Mode-->
     <bool name="config_sustainedPerformanceModeSupported">true</bool>
 
@@ -385,7 +390,7 @@
     <bool name="config_enableBurnInProtection">true</bool>
 
     <!-- Light sensor event rate in milliseconds for automatic brightness control. -->
-    <integer name="config_autoBrightnessLightSensorRate">250</integer>
+    <integer name="config_autoBrightnessLightSensorRate">450</integer>
 
     <!-- When the screen is turned on, the previous estimate of the ambient light level at the time
          the screen was turned off is restored and is used to determine the initial screen
@@ -1076,7 +1081,7 @@
     <!-- Whether auto face unlock is enabled by default -->
     <bool name="config_autoFaceUnlockEnabledByDefault">true</bool>
 
-    <string translatable="false" name="config_mainBuiltInDisplayCutout">M -62,0 L -62,79 L 62,79 L 62,0 Z</string>
+    <string translatable="false" name="config_mainBuiltInDisplayCutout">M-86.9975334,10.7082389 C-74.1335099,23.7038575 -64.104552,36.2300641 -56.9106598,48.2868587 C-45.0899716,68.1052477 -23.8069241,81 0.002904346,81 C23.8127328,81 45.0899716,68.1052477 56.9164685,48.2868587 C64.1090408,36.2290779 74.1379482,23.7022572 87.0031906,10.7063968 L87,0 L-87,0 L-86.9975334,10.7082389 Z</string>
 
     <!-- Whether the display cutout region of the main built-in display should be forced to
          black in software (to avoid aliasing or emulate a cutout that is not physically existent).
@@ -1125,4 +1130,16 @@
 
     <!-- Whether the new Auto Selection Network UI should be shown -->
     <bool name="config_enableNewAutoSelectNetworkUI">true</bool>
+
+    <!-- The list absolute paths of jar/apk files containing the device specific handlers,
+        delimited by File.pathSeparator, which defaults to ":" on Android  -->
+    <string name="config_deviceKeyHandlerLib" translatable="false">/system/priv-app/XiaomiParts/XiaomiParts.apk</string>
+
+    <!-- Full qualified name of the class that implements
+        com.android.internal.os.DeviceKeyHandler interface. -->
+    <string name="config_deviceKeyHandlerClass" translatable="false">org.chaldeastudio.deviceparts.KeyHandler</string>
+
+    <!-- Default value for proximity check on screen wake -->
+    <bool name="config_proximityCheckOnWake">true</bool>
+    <bool name="config_proximityCheckOnWakeEnabledByDefault">false</bool>
 </resources>

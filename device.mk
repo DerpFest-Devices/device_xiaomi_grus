@@ -167,6 +167,11 @@ PRODUCT_PACKAGES += \
     Snap \
     vendor.qti.hardware.camera.device@1.0.vendor
 
+# Codec2 modules
+PRODUCT_PACKAGES += \
+    com.android.media.swcodec \
+    libsfplugin_ccodec
+
 # CNE
 PRODUCT_PACKAGES += \
     cneapiclient \
@@ -259,10 +264,6 @@ PRODUCT_PACKAGES += \
 # IMS
 PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager
-
-# Custom Doze
-PRODUCT_PACKAGES += \
-    CustomDoze
 
 # Common init scripts
 PRODUCT_PACKAGES += \
@@ -466,6 +467,7 @@ PRODUCT_PACKAGES += \
 
 # VNDK-SP
 PRODUCT_PACKAGES += \
+    libstdc++.vendor \
     vndk-sp
 
 # VR
@@ -476,7 +478,7 @@ PRODUCT_PACKAGES += \
 
 # WiFi Display
 PRODUCT_PACKAGES += \
-    libnl
+    libmediaextractorservice \
 
 # Wifi
 PRODUCT_PACKAGES += \
@@ -505,7 +507,7 @@ PRODUCT_COPY_FILES += \
 #    $(LOCAL_PATH)/wifi/aoa_cldb_falcon.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/aoa_cldb_falcon.bin \
 #    $(LOCAL_PATH)/wifi/aoa_cldb_swl14.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/aoa_cldb_swl14.bin \
 
-# xiaomi doze
+# Parts
 PRODUCT_PACKAGES += \
     XiaomiParts
 
@@ -526,7 +528,7 @@ PRODUCT_COPY_FILES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.1-service \
+    android.hardware.nfc@1.2-service \
     NfcNci \
     Tag \
     SecureElement \

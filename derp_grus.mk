@@ -15,8 +15,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit some common stuff
 $(call inherit-product, vendor/aosip/config/common_full_phone.mk)
 
-$(call inherit-product, vendor/lineage/config/common.mk)
-
 # Inherit from land device
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
 

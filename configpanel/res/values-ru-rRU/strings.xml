@@ -18,8 +18,8 @@
 
     <!-- Flicker-free -->
     <string name="flicker_free_settings_title">DC Dimming</string>
-    <string name="flicker_free_settings_summary">Avoid DC dimming  on low brightness</string>
-    <string name="flicker_free_toggle_title">Enable DC Dimming</string>
-    <string name="flicker_free_toggle_summary">May reduce image quality</string>
+    <string name="flicker_free_settings_summary">Включить DC Dimming при низкой яркости экрана.</string>
+    <string name="flicker_free_toggle_title">Включить DC Dimming</string>
+    <string name="flicker_free_toggle_summary">Может повлиять на качество изображения</string>
 
 </resources>

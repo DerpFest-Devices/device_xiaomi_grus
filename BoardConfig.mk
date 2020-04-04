@@ -51,7 +51,7 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0xA90000
 BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom androidboot.console=ttyMSM0 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 
 BOARD_KERNEL_CMDLINE += ehci-hcd.park=3 lpm_levels.sleep_disabled=1 service_locator.enable=1 androidboot.configfs=true
-BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a600000.dwc3 swiotlb=4096 loop.max_part=7
+BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a600000.dwc3 swiotlb=4096 loop.max_part=16
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 4096
@@ -137,8 +137,9 @@ BOARD_USE_LEGACY_UI := true
 
 # Camera
 TARGET_USES_QTI_CAMERA_DEVICE := true
-BOARD_QTI_CAMERA_32BIT_ONLY := true
-USE_CAMERA_STUB := true
+USE_CAMERA_STUB := false
+TARGET_TS_MAKEUP := false
+USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Charger Mode
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -181,15 +182,20 @@ TARGET_USES_MEDIA_EXTENSIONS := true
 
 # Graphics
 BOARD_USES_ADRENO := true
-TARGET_USES_QCOM_DISPLAY_BSP := true
-TARGET_USES_COLOR_METADATA := true
+TARGET_USES_COLOR_METADATA := false
 TARGET_USES_DRM_PP := true
 TARGET_USES_NEW_ION_API :=true
 TARGET_USES_ION := true
-TARGET_USES_GRALLOC1 := true
 TARGET_USES_HWC2 := true
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
+TARGET_HAS_HDR_DISPLAY := true
+TARGET_HAS_WIDE_COLOR_DISPLAY := true
+TARGET_USES_DISPLAY_RENDER_INTENTS := true
+MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
+
 
 # GPS
 #TARGET_NO_RPC := true
@@ -247,6 +253,9 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # RenderScript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+
+# sensors
+USE_SENSOR_MULTI_HAL := true
 
 # Sepolicy
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private

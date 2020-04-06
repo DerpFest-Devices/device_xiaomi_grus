@@ -2863,9 +2863,9 @@ case "$target" in
       echo -6 >  /sys/devices/system/cpu/cpu7/sched_load_boost
       echo 85 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_load
 
-      echo "0:1209600" > /sys/module/cpu_boost/parameters/input_boost_freq
-      echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
-      echo "0:1209600 1:0 2:0 3:0 4:0 5:0 6:2054400 7:0" > /sys/module/cpu_boost/parameters/powerkey_input_boost_freq
+      echo "0:1036800" > /sys/module/cpu_boost/parameters/input_boost_freq
+      echo 120 > /sys/module/cpu_boost/parameters/input_boost_ms
+      echo "0:1036800" > /sys/module/cpu_boost/parameters/powerkey_input_boost_freq
       echo 400 > /sys/module/cpu_boost/parameters/powerkey_input_boost_ms
 
       # Set Memory parameters
@@ -2928,17 +2928,17 @@ case "$target" in
            echo 200 > /dev/blkio/background/blkio.weight
            echo 2000 > /dev/blkio/blkio.group_idle
            echo 0 > /dev/blkio/background/blkio.group_idle
-           
-            # cpuset parameters
-	       echo 1-2 > /dev/cpuset/audio-app/cpus
+
+           # cpuset parameters
+	       echo 2-3 > /dev/cpuset/audio-app/cpus
 	       echo 0-1 > /dev/cpuset/background/cpus
 	       echo 0-7 > /dev/cpuset/camera-daemon/cpus
-	       echo 0-3,5-6 > /dev/cpuset/foreground/cpus
+	       echo 4-5,6-7 > /dev/cpuset/foreground/cpus
 	       echo 0-3 > /dev/cpuset/restricted/cpus
-	       echo 0-3 > /dev/cpuset/system-background/cpus
-	       echo 0-7 > /dev/cpuset/top-app/cpus
-	
-            # Turn off scheduler boost at the end
+	       echo 0-5 > /dev/cpuset/system-background/cpus
+	       echo 0-5 > /dev/cpuset/top-app/cpus
+
+          # Turn off scheduler boost at the end
             echo 0 > /proc/sys/kernel/sched_boost
 
             # Turn on sleep modes.

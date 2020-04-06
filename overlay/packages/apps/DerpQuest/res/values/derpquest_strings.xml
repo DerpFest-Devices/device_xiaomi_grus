@@ -12,7 +12,9 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-
+    <!-- Firmware images -->
+    <string name="about_device_fw_ver" translatable="false">11.0.2.0 MIFW + PIE EEA BB</string>
+    <string name="about_device_fw_link" translatable="false">https://drive.google.com/file/d/1-T7vnhrj3MWK53cIM9CMEMNUqI0holpW/view?usp=drivesdk</string>
     <string name="maintainer_name">xyzmean (Dmitry Xyzx)</string>
     <string name="maintainer_telegram">https://t.me/kronicgrus</string>
 </resources>

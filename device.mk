@@ -519,6 +519,10 @@ PRODUCT_PACKAGES += \
     XiaomiParts \
     XiaomiPocketMode
 
+# Custom overlays
+PRODUCT_PACKAGES += \
+    NoCutoutOverlay
+
 # WiFi Display
 PRODUCT_PACKAGES += \
     libaacwrapper \

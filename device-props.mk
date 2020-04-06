@@ -123,3 +123,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.radio.NO_STAPA=1 \
 	persist.radio.VT_HYBRID_ENABLE=1 \
 	persist.radio.modem_dynamic_sar_state=close
+
+# Notch overlay
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.miui.notch=1

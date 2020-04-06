@@ -593,3 +593,8 @@ PRODUCT_PACKAGES += \
 # Config panel
 PRODUCT_PACKAGES += \
     ConfigPanel
+
+
+# Notch Overlay
+PRODUCT_PACKAGES += \
+    NotchOverlay

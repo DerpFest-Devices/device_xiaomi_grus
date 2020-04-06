@@ -516,7 +516,8 @@ PRODUCT_COPY_FILES += \
 
 # Parts
 PRODUCT_PACKAGES += \
-    XiaomiParts
+    XiaomiParts \
+    XiaomiPocketMode
 
 # WiFi Display
 PRODUCT_PACKAGES += \

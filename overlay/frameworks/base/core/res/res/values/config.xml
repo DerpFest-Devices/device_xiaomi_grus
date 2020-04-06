@@ -1091,21 +1091,6 @@
     <!-- Whether the device has fingeprint sensor or not -->
     <bool name="config_hasFingerprintSensor">true</bool>
 
-    <!-- Display mode remapping table.
-         If the mode names returned by the backend do not match
-         the predefined and translated strings in the Settings
-         app, they can be remapped here. The format is
-         "oldname:newname", one per entry. -->
-    <string-array name="config_displayModeMappings" translatable="false">
-        <item>00none_gamma:None</item>
-        <item>38default_OLED:Default OLED</item>
-        <item>36P3_native:Standard</item>
-        <item>hal_hdr:HDR</item>
-        <item>40smart_mc:DCI_P3</item>
-        <item>03srgb_d65:sRGB</item>
-        <item>41game1:Game</item>
-    </string-array>
-
     <!-- Should we filter any display modes which are unampped? -->
     <bool name="config_filterDisplayModes">true</bool>
 
@@ -1134,4 +1119,10 @@
     <!-- Default value for proximity check on screen wake -->
     <bool name="config_proximityCheckOnWake">true</bool>
     <bool name="config_proximityCheckOnWakeEnabledByDefault">false</bool>
+
+    <!-- Smart charging -->
+    <bool name="config_smartChargingAvailable">true</bool>
+    <string name="config_smartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/input_suspend</string>
+    <string name="config_smartChargingSuspendValue" translatable="false">1</string>
+    <string name="config_smartChargingResumeValue" translatable="false">0</string>
 </resources>

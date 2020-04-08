@@ -1,6 +1,5 @@
 /*
  * Copyright (c) 2012, 2013, 2015, 2017-2018, The Linux Foundation. All rights reserved.
- * Copyright (C) 2018-2019 The LineageOS Project
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -37,6 +36,7 @@
 #define SUSTAINED_PERF_HINT_ID (0x0F00)
 #define VR_MODE_HINT_ID (0x1000)
 #define VR_MODE_SUSTAINED_PERF_HINT_ID (0x1001)
+#define INTERACTION_HINT_ID (0x1A00)
 
 #define AOSP_DELTA (0x1200)
 
@@ -50,14 +50,12 @@
 #define LAUNCH_HINT AOSP_DELTA + POWER_HINT_LAUNCH
 #define DISABLE_TOUCH_HINT AOSP_DELTA + POWER_HINT_DISABLE_TOUCH
 
-// update NUM_HINTS if hints are added to AOSP
-#define NUM_HINTS (POWER_HINT_DISABLE_TOUCH + 1)
+//update NUM_HINTS if hints are added to AOSP
+#define NUM_HINTS                       (POWER_HINT_DISABLE_TOUCH +1)
 
 #define VR_MODE_SUSTAINED_PERF_HINT (0x1301)
 
-#define DEFAULT_PROFILE_HINT_ID (0xFF00)
-
-struct hint_handles {
+struct hint_handles{
     int handle;
     int ref_count;
 };

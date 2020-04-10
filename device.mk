@@ -528,8 +528,7 @@ PRODUCT_COPY_FILES += \
 
 # Parts
 PRODUCT_PACKAGES += \
-    XiaomiParts \
-    XiaomiPocketMode
+    XiaomiParts
 
 # Custom overlays
 PRODUCT_PACKAGES += \

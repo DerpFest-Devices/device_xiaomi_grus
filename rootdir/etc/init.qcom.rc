@@ -1152,7 +1152,6 @@ service vendor.move_time_data /system/bin/move_time_data.sh
     group system
     disabled
     oneshot
-
 service vendor.hbtp /vendor/bin/hbtp_daemon
      class main
      user system
@@ -1168,7 +1167,6 @@ service vendor.hbtp /vendor/bin/hbtp_daemon
 #    shutdown critical
 
 #on property:vendor.chre.enabled=0
-#   stop chre
 
 service bugreport /system/bin/dumpstate -d -p -B -z -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
     class main

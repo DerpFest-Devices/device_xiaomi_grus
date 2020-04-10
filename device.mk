@@ -24,6 +24,8 @@ PRODUCT_ENFORCE_RRO_TARGETS := \
 -include $(LOCAL_PATH)/device-props.mk
 -include $(LOCAL_PATH)/vendor-props.mk
 
+$(call inherit-product, $(LOCAL_PATH)/audio/sdm710.mk)
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
@@ -91,7 +93,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@2.0-impl \
     android.hardware.audio.effect@5.0 \
     android.hardware.audio.effect@5.0-impl \
-    android.hardware.soundtrigger@2.1-impl \
+    android.hardware.soundtrigger@2.2-impl \
     android.hardware.audio.common@2.0-util \
     android.hardware.audio.common@5.0 \
     android.hardware.audio.common@5.0-util \
@@ -108,6 +110,7 @@ PRODUCT_PACKAGES += \
     libaudioroute \
     libhdmiedid \
     libhfp \
+    audiod \
     libaudio-resampler \
     libqcompostprocbundle \
     libqcomvisualizer \
@@ -139,7 +142,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/mixer_paths_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_mtp.xml
 
 PRODUCT_COPY_FILES += \
-    frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:/$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
@@ -243,7 +245,6 @@ PRODUCT_PACKAGES += \
     libgnss \
     libwifi-hal-ctrl
 
-
 # Stick with QTI gatekeeper/keymaster as for now
 # Gatekeeper HAL
 #PRODUCT_PACKAGES += \
@@ -310,10 +311,7 @@ PRODUCT_PACKAGES += \
     android.hidl.manager@1.0-java
 
 # IFAA manager
-PRODUCT_PACKAGES += \
-    org.ifaa.android.manager
-
-#PRODUCT_BOOT_JARS += \
+#PRODUCT_PACKAGES += \
 #    org.ifaa.android.manager
 
 # Telephony
@@ -502,6 +500,9 @@ PRODUCT_PACKAGES += \
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
+    vendor.qti.hardware.wifi.hostapd@1.0.vendor \
+    vendor.qti.hardware.wifi.supplicant@1.0.vendor \
+    vendor.qti.hardware.wifi.supplicant@2.0.vendor \
     hostapd \
     libwifi-hal-qcom \
     libwpa_client \
@@ -552,8 +553,8 @@ PRODUCT_COPY_FILES += \
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2-service \
-    NfcNci \
     Tag \
+    NfcNci \
     SecureElement \
     android.hardware.secure_element@1.0-service
 
@@ -591,8 +592,14 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-impl \
+    android.hardware.bluetooth@1.0-service \
     BluetoothResCommon \
-    libbthost_if
+    libbthost_if \
+    libldacBT_enc \
+    hwaddrs \
+    libbt-vendor \
+    libldacBT_abr
 
 # qti telephony
 PRODUCT_PACKAGES += \
@@ -614,3 +621,4 @@ PRODUCT_PACKAGES += \
 # Notch Overlay
 PRODUCT_PACKAGES += \
     NotchOverlay
+

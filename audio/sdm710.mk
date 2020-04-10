@@ -138,22 +138,22 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ro.af.client_heap_size_kbyte=7168
 
 #keep alive is needed by default for ffv
-
+# TO CHECK
 PRODUCT_PROPERTY_OVERRIDES += \
 vendor.audio.keep_alive.disabled=false
 
 #enable headset calibration
-
+# TO CHECK
 PRODUCT_PROPERTY_OVERRIDES += \
 vendor.audio.volume.headset.gain.depcal=true
 
 #enable dualmic fluence for voice communication
-
+# TO CHECK
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.audio.fluence.voicecomm=true
 
 #enable AAC frame ctl for A2DP sinks
-
+# TO CHECK
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.vendor.bt.aac_frm_ctl.enabled=true
 
